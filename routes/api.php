@@ -6,6 +6,7 @@ use App\Http\Controllers\ChiTietThuePhongController;
 use App\Http\Controllers\ChucNangController;
 use App\Http\Controllers\ChuyenMucController;
 use App\Http\Controllers\DichVuController;
+use App\Http\Controllers\GiaoDichController;
 use App\Http\Controllers\HoaDonController;
 use App\Http\Controllers\KhachHangController;
 use App\Http\Controllers\LoaiPhongController;
@@ -20,6 +21,8 @@ use App\Models\ChiTietThuePhong;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
+Route::get('/giao-dich', [GiaoDichController::class, 'index']);
 Route::group(['middleware' => 'adminMiddle'], function() {
     Route::get('/loai-phong/data', [LoaiPhongController::class, 'getData']);
     Route::post('/loai-phong/create', [LoaiPhongController::class, 'store']);
